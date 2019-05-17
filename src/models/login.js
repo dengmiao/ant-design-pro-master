@@ -20,10 +20,13 @@ export default {
         payload: response,
       });
       // Login successfully
-      if (response.status === 'ok') {
+      if (response.code === 200) {
         reloadAuthorized();
         const urlParams = new URL(window.location.href);
         const params = getPageQuery();
+        localStorage.setItem('antd-pro-authority', 'admin')
+        // put token
+        localStorage.setItem('token', response.result.token);
         let { redirect } = params;
         if (redirect) {
           const redirectUrlParams = new URL(redirect);

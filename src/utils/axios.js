@@ -4,7 +4,7 @@ import { axios } from 'axios'
 const TIMEOUT = 1 * 60 * 1000
 
 axios.defaults.timeout = TIMEOUT
-axios.defaults.baseURL = 'http://localhost:7777/corgi'
+axios.defaults.baseURL = '/corgi'
 
 export default async function request (options) {
   let response
